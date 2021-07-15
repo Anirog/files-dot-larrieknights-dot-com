@@ -7,3 +7,5 @@ The favicons where generated using the website [realfavicongenerator.net](https:
 I made the favicon in [Sketch](https://www.sketch.com)
 
 ![Image of Droid](https://to.site44.com/pweb/img/apple-touch-icon.png)
+
+This is a test.
