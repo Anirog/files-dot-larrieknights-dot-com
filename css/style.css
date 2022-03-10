@@ -1,148 +1,166 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  :root {
-    font: 20px "Roboto", sans-serif;
-    line-height: 1.5;
-  }
-  
-  body {
-    background-color: #fff;
-    color: #333333;
-  }
-  
-  .container {
-    width: 80%;
-    max-width: 650px;
-    margin: 2em auto;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #3897d3;
-    border-bottom: 1px solid;
-  }
-  
-  a:hover {
-    color: #6dacd3;
-  }
-  
-  .footer {
-    font-size: 0.7rem;
-    text-align: center;
-  }
-  
-  .footer a {
-    border-bottom: none;
-    color: #333333;
-  }
+  box-sizing: border-box;
+}
 
-  .footer a:hover {
-    color: #6dacd3;
-  }
-  
-  .profile {
-    border-radius: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
+:root {
+  font: 20px "Roboto", sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #fff;
+  color: #333333;
+}
+
+.container {
+  width: 80%;
+  max-width: 650px;
+  margin: 2em auto;
+}
+
+a {
+  text-decoration: none;
+  color: #3897d3;
+  border-bottom: 1px solid;
+}
+
+a:hover {
+  color: #6dacd3;
+}
+
+.footer {
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.footer a {
+  border-bottom: none;
+  color: #333333;
+}
+
+.footer a:hover {
+  color: #6dacd3;
+}
+
+.profile {
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  /* 5% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 95%;
+  /* Could be more or less, depending on screen size */
+}
+
+@media (min-width: 700px) {
   .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto; /* 5% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 95%; /* Could be more or less, depending on screen size */
+    max-width: 700px;
+    /* Could be more or less, depending on screen size */
   }
+}
 
-  @media (min-width: 700px) { 
-    .modal-content {
-    max-width: 700px; /* Could be more or less, depending on screen size */
-    }
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 32px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  /* Style inputs with type="text" & "email", select elements and textareas */
-  input[type="text"],
-  input[type="email"],
-  select,
-  textarea {
-    font: 17px "Roboto", sans-serif;
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-  }
-  
-  /* Style the submit button with a specific background color etc */
-  input[type="submit"] {
-    font: 16px "Roboto", sans-serif;
-    background-color: #3897d3;
-    color: white;
-    padding: 12px 40px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  /* When moving the mouse over the submit button, add a darker blue color */
-  input[type="submit"]:hover {
-    background-color: #3080b3;
-  }
-  
-  .safetext {
-    font-size: 16px;
-  }
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+}
 
-  .thanks {
-    text-align: center;
-  }
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-  .success {
-    font-size: 3rem;
-    color: green;
-  }
+/* Style inputs with type="text" & "email", select elements and textareas */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  font: 17px "Roboto", sans-serif;
+  width: 100%;
+  /* Full width */
+  padding: 12px;
+  /* Some padding */
+  border: 1px solid #ccc;
+  /* Gray border */
+  border-radius: 4px;
+  /* Rounded borders */
+  box-sizing: border-box;
+  /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  /* Add a top margin */
+  margin-bottom: 16px;
+  /* Bottom margin */
+  resize: vertical;
+  /* Allow the user to vertically resize the textarea (not horizontally) */
+}
 
-  .circle {
-    margin-top: -30px;
-  }
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+  font: 16px "Roboto", sans-serif;
+  background-color: #3897d3;
+  color: white;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  .rotate {
-    transform: rotate(180deg) scaleX(-1);
-  }
-  
+/* When moving the mouse over the submit button, add a darker blue color */
+input[type="submit"]:hover {
+  background-color: #3080b3;
+}
+
+.safetext {
+  font-size: 16px;
+}
+
+.thanks {
+  text-align: center;
+}
+
+.success {
+  font-size: 3rem;
+  color: green;
+}
+
+.circle {
+  margin-top: -30px;
+}
+
+.rotate {
+  transform: rotate(180deg) scaleX(-1);
+}
