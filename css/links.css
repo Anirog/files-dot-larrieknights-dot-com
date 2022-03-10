@@ -63,23 +63,3 @@ h2 {
   font-weight: normal;
   letter-spacing: 2px;
 }
-
-.channels {
-  display: flex;
-  max-width: 400px;
-  margin: 0 auto;
-}
-.channels a {
-  flex: 1;
-  padding: 5px 10px;
-  margin-right: 10px;
-  color: #272727;
-  background-color: #FFFFFF;
-  border: none;
-}
-.channels a:last-child {
-  margin-right: 0;
-}
-.channels a:hover {
-  text-decoration: underline;
-}
