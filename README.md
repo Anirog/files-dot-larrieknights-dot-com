@@ -1,6 +1,6 @@
 # This is a repository for my personal website
 
-It was built using HTML, CSS and javascript.
+It was built using HTML, CSS and Javascript.
 
 The favicons where generated using the website [realfavicongenerator.net](https://realfavicongenerator.net/)
 
