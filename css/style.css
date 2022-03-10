@@ -35,6 +35,11 @@
   
   .footer a {
     border-bottom: none;
+    color: #333333;
+  }
+
+  .footer a:hover {
+    color: #6dacd3;
   }
   
   .profile {
