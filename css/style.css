@@ -118,6 +118,7 @@ a:hover {
   float: right;
   font-size: 32px;
   font-weight: bold;
+  margin-top: -11px;
 }
 
 .close:hover,
