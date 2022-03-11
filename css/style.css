@@ -31,6 +31,7 @@ a:hover {
 .footer {
   font-size: 0.7rem;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .footer a {
@@ -40,6 +41,28 @@ a:hover {
 
 .footer a:hover {
   color: #6dacd3;
+}
+
+.footer__social__container {
+  text-align: center;
+}
+
+.footer__social a {
+  display: inline-block;
+  height: 1.25rem;
+  border-bottom: none;
+}
+
+.footer__social a svg path {
+  transition: fill 150ms ease-in-out;
+}
+
+.footer__social a:hover svg path {
+  fill: #6dacd3;
+}
+
+.footer__social a:not(:last-child) {
+  margin-right: 1rem;
 }
 
 .profile {
@@ -155,12 +178,17 @@ input[type="submit"]:hover {
 .success {
   font-size: 3rem;
   color: green;
+  margin-top: 10px;
 }
 
 .circle {
-  margin-top: -30px;
+  margin-top: -50px;
 }
 
 .rotate {
   transform: rotate(180deg) scaleX(-1);
+}
+
+.hat__text {
+  margin-top: -30px;
 }

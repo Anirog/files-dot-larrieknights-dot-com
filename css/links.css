@@ -38,12 +38,7 @@ h1 {
   margin: 0 auto 15px;
 }
 
-a:hover {
-  background-color: #000000;
-  color: #FFFFFF;
-}
-
-a {
+.btn {
   display: block;
   max-width: 400px;
   margin: 0 auto 15px;
@@ -57,9 +52,52 @@ a {
   transition: all 200ms ease-in-out;
 }
 
+.btn:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
 h2 {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: 2px;
+}
+
+.footer__social__container {
+  text-align: center;
+}
+
+.footer__social a {
+  display: inline-block;
+  height: 1.25rem;
+  border-bottom: none;
+}
+
+.footer__social a svg path {
+  transition: fill 150ms ease-in-out;
+}
+
+.footer__social a:hover svg path {
+  fill: #6dacd3;
+}
+
+.footer__social a:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.footer {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  border-bottom: none;
+  color: #333333;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #6dacd3;
 }
