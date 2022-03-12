@@ -33,6 +33,7 @@
 - HTML
 - CSS
 - Javascript
+- Mobile-first workflow (with media queries)
 
 ### What I learned
 
