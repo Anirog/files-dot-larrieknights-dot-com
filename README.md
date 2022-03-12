@@ -57,7 +57,7 @@ To add a hover effect with animation to the social icons I used the CSS `transit
 
 ---
 
-To use emojis in HTML find the unicode for the emoji you want, remove the `U` and the replace it with `&#x` then add `;` at the end.
+To use emojis in HTML find the unicode for the emoji you want, remove the `U` and then replace it with `&#x` then add `;` at the end.
 
 ```html
 <p>&#x1F3B8;<p>
