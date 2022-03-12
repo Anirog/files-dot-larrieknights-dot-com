@@ -82,7 +82,7 @@ The icon needs to be square size 180px x 180px for retina displays, do not add r
 - [Favicon Generator](https://realfavicongenerator.net/) - this helped me create the favicons. 
 - [W3 Schools - How TO - CSS/JS Modal](https://www.w3schools.com/howto/howto_css_modals.asp) - This helped me create the modal box for the contact form.
 - [formsubmit.co](https://formsubmit.co/) - For the contact form.
-- [Holly Bourneville - How to use Emojis in HTML](https://hollybourneville.medium.com/how-to-use-emojis-in-html-b3c671e21b92)
+- [How to use Emojis in HTML](https://hollybourneville.medium.com/how-to-use-emojis-in-html-b3c671e21b92) - Post by Holly Bourneville 
 - [emojipedia.org](https://emojipedia.org/) - To find emojis and the Unicode
 
 ## Author
