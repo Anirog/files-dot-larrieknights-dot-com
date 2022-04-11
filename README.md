@@ -16,11 +16,11 @@
 
 ### Screenshots
 
-##### Home Page
-![](home-page-screenshot.png)
+##### Light Mode
+![](screenshot-light.png)
 
-##### Links Page
-![](links-page-screenshot.png)
+##### Dark Mode
+![](screenshot-dark.png)
 
 ### Links
 
@@ -76,6 +76,8 @@ The icon needs to be square size 180px x 180px for retina displays, do not add r
 ```
 ![](img/apple-touch-icon.png)
 
+---
+
 ### Useful resources
 
 - [Update Your Footer](https://updateyourfooter.com/) - This helped me to automatically update the year dynamic timestamp.
@@ -84,6 +86,7 @@ The icon needs to be square size 180px x 180px for retina displays, do not add r
 - [formsubmit.co](https://formsubmit.co/) - For the contact form.
 - [How to use Emojis in HTML](https://hollybourneville.medium.com/how-to-use-emojis-in-html-b3c671e21b92) - Post by Holly Bourneville 
 - [emojipedia.org](https://emojipedia.org/) - To find emojis and the Unicode
+- [dev.to](https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8) - Create A Dark/Light Mode Switch with CSS Variables
 
 ## Author
 

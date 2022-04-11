@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/links.css">
     <link rel="stylesheet" href="css/links-footer.css">
+    <link rel="stylesheet" href="css/links-slider.css">
     <title>Links - Larrie Knights</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
@@ -28,6 +29,15 @@
   <meta name="keywords" content="larrie, knights, larrie knights">
 </head>
 <body>
+
+  <!-- Dark / Light Mode Button -->
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+  </label>
+  <em>Light / Dark</em>
+</div>
 
     <!-- Logo -->
     <img class="logo" src="img/larrie-knights.jpg" alt="Larrie Knights" width="200px" height="200px">
@@ -100,6 +110,7 @@
         <script type="text/javascript">
           document.write(new Date().getFullYear());
         </script>
+        <script src="js/light-dark-toggle.js"></script>
       </div>   
 </body>
 </html>

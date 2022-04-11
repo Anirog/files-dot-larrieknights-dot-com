@@ -1,3 +1,25 @@
+:root {
+  --bg-color: #FFFFFF;
+  --font-color: #333333;
+  --link-color: #3897d3;
+  --link-hover-color: #6dacd3;
+  --modal-bg-color: #fefefe;
+  --modal-border-color: #888888;
+  --success-color: green;
+  --circle-color: #008000;
+}
+
+[data-theme="dark"] {
+  --bg-color: #202124;
+  --font-color: #FFFFFF;
+  --link-color: #8AB4F8;
+  --link-hover-color: #bdbdbd;
+  --modal-bg-color: #2c2c2c;
+  --modal-border-color: #4b4b4b;
+  --success-color: #8DFF95;
+  --circle-color: #8DFF95;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,8 +30,8 @@
 }
 
 body {
-  background-color: #fff;
-  color: #333333;
+  background-color: var(--bg-color);
+  color: var(--font-color);
 }
 
 .container {
@@ -20,12 +42,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #3897d3;
-  border-bottom: 1px solid;
+  color: var(--link-color);
 }
 
 a:hover {
-  color: #6dacd3;
+  border-bottom: 1px solid;
 }
 
 .footer {
@@ -36,15 +57,16 @@ a:hover {
 
 .footer a {
   border-bottom: none;
-  color: #333333;
+  color: var(--font-color);
 }
 
 .footer a:hover {
-  color: #6dacd3;
+  color: var(--link-hover-color);
 }
 
 .footer__social__container {
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .footer__social a {
@@ -57,8 +79,12 @@ a:hover {
   transition: fill 150ms ease-in-out;
 }
 
+.footer__social a svg path {
+  fill: var(--font-color);
+}
+
 .footer__social a:hover svg path {
-  fill: #6dacd3;
+  fill: var(--link-hover-color);
 }
 
 .footer__social a:not(:last-child) {
@@ -96,11 +122,11 @@ a:hover {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: var(--modal-bg-color);
   margin: 5% auto;
   /* 5% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid var(--modal-border-color);
   width: 95%;
   /* Could be more or less, depending on screen size */
 }
@@ -114,7 +140,7 @@ a:hover {
 
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: var(--link-color);
   float: right;
   font-size: 32px;
   font-weight: bold;
@@ -123,7 +149,7 @@ a:hover {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: var(--link-hover-color);
   text-decoration: none;
   cursor: pointer;
 }
@@ -178,12 +204,16 @@ input[type="submit"]:hover {
 
 .success {
   font-size: 3rem;
-  color: green;
+  color: var(--success-color);
   margin-top: 10px;
 }
 
 .circle {
   margin-top: -50px;
+}
+
+.circle g path {
+  fill: var(--circle-color);
 }
 
 .rotate {
