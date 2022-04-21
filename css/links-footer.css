@@ -1,9 +1,14 @@
 .footer {
     font-size: 12px;
-    margin-top: 10px;
-    padding: 0;
-}
-
-.footer a:hover {
-    background-color: none;
-}
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .footer a {
+    border-bottom: none;
+    color: var(--font-color);
+  }
+  
+  .footer a:hover {
+    color: var(--link-hover-color);
+  }
