@@ -1,8 +1,16 @@
-/*Simple css to style it like a toggle switch*/
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
     justify-content: start;
+}
+
+.theme-switch-wrapper svg path {
+    fill: var(--link-color);
+}
+
+.theme-switch-wrapper label:hover svg path {
+    fill: var(--link-hover-color);
+    transition: 150ms ease-in-out;
 }
 
 .theme-switch input {
@@ -11,9 +19,4 @@
 
 label {
     cursor: pointer;
-}
-
-label:hover {
-    opacity: 0.5;
-    transition: 150ms ease-in-out;
 }
