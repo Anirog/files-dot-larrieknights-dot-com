@@ -48,6 +48,10 @@ body {
     margin-bottom: 1em;  
 }
 
+.profile {
+    border-radius: 50%;
+}
+
 figure * {
     display: block;
     margin-bottom: 2.5em;
