@@ -88,7 +88,7 @@ p {
 .challenge-text {
     color: var(--time-color);
     font-size: 0.8rem;
-    font-weight: 100;
+    font-weight: 500;
     margin-bottom: 0.5em;
 }
 
