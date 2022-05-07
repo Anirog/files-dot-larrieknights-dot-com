@@ -85,7 +85,13 @@ p {
 .challenge-text {
     color: var(--time-color);
     font-size: 0.8rem;
-    margin-bottom: 0.1em;
+    font-weight: 100;
+    margin-bottom: 0.5em;
+}
+
+.challenge-text-accent {
+    font-weight: 900;
+    color: var(--link-color);
 }
 
 h1 {
