@@ -101,7 +101,7 @@ p {
 
 .challenge-text-accent {
     font-weight: 900;
-    color: var(--link-color);
+    color: var(--font-color);
 }
 
 h1 {
