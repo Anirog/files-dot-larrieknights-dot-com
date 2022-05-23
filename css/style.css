@@ -96,6 +96,23 @@ a:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 90px;
+  height: 90px;
+}
+
+/* 500px or larger */
+@media (min-width: 31.25em) {
+  .profile {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.hat-image {
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* The Modal (background) */
