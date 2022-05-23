@@ -208,6 +208,7 @@ figcaption {
 
 .triangle {
     background-color: var(--time-color);
+    opacity: 0.2;
     height: 0.1vh;
     width: 40vw;
 }
