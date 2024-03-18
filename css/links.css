@@ -39,7 +39,7 @@ body {
   min-height: 100vh;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  margin: 0 20px 20px;
+  margin: 0 20px 0;
 }
 
 a {
@@ -47,35 +47,30 @@ a {
 }
 
 h1 {
-  font-size: 20px;
+  text-align: center;
+  font-size: 16px;
   font-weight: 700;
-}
-
-.about__text {
-  font-size: 20px;
 }
 
 .logo {
   border-radius: 50%;
-  margin-top: 4px;
-  width: 90px;
-  height: 90px;
+  margin-top: 21px;
 }
 
 /* 500px or larger */
 @media (min-width: 31.25em) {
   .logo {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
   }
 }
 
 .about {
   line-height: 1.5;
   max-width: 400px;
-  text-align: left;
+  text-align: center;
   display: block;
-  margin: 0 auto 15px;
+  margin: 0 auto 16px;
 }
 
 .btn {
@@ -83,8 +78,8 @@ h1 {
   max-width: 400px;
   margin: 0 auto 15px;
   padding: 15px 20px;
-  font-size: 0.85rem;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 400;
   color: var(--btn-text-color);
   border: 1px solid var(--font-color);
   border-radius: 5px;
@@ -102,31 +97,4 @@ h2 {
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: 2px;
-}
-
-.footer__social__container {
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.footer__social a {
-  display: inline-block;
-  height: 1.25rem;
-  border-bottom: none;
-}
-
-.footer__social a svg path {
-  transition: fill 150ms ease-in-out;
-}
-
-.footer__social a svg path {
-  fill: var(--font-color);
-}
-
-.footer__social a:hover svg path {
-  fill: var(--link-hover-color);
-}
-
-.footer__social a:not(:last-child) {
-  margin-right: 1.3rem;
 }
