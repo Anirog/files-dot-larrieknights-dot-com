@@ -1,15 +1,4 @@
 :root {
-  --bg-color: #FFFFFF;
-  --font-color: #333333;
-  --link-color: #3897d3;
-  --link-hover-color: #6dacd3;
-  --modal-bg-color: #fefefe;
-  --modal-border-color: #888888;
-  --success-color: green;
-  --circle-color: #008000;
-}
-
-[data-theme="dark"] {
   --bg-color: #202124;
   --font-color: #FFFFFF;
   --link-color: #8AB4F8;
@@ -25,7 +14,7 @@
 }
 
 :root {
-  font: 20px "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.5;
 }
 
@@ -49,10 +38,14 @@ a:hover {
   border-bottom: 1px solid;
 }
 
+.contact-page-text {
+  margin-top: 21px;
+}
+
 .footer {
   font-size: 12px;
   text-align: center;
-  margin-bottom: 10px;
+  padding-bottom: 30px;
 }
 
 .footer a {
@@ -94,18 +87,9 @@ a:hover {
 .profile {
   border-radius: 50%;
   display: block;
+  margin-top: 21px;
   margin-left: auto;
   margin-right: auto;
-  width: 90px;
-  height: 90px;
-}
-
-/* 500px or larger */
-@media (min-width: 31.25em) {
-  .profile {
-    width: 200px;
-    height: 200px;
-  }
 }
 
 .hat-image {
@@ -222,7 +206,7 @@ input[type="submit"]:hover {
 .success {
   font-size: 3rem;
   color: var(--success-color);
-  margin-top: 10px;
+  margin-top: 21px;
 }
 
 .circle {

@@ -3,18 +3,6 @@
 }
 
 :root {
-    --bg-color: #ffffff;
-    --font-color: #333333;
-    --link-color: #3897d3;
-    --link-hover-color: #6dacd3;
-    --modal-bg-color: #fefefe;
-    --modal-border-color: #888888;
-    --success-color: green;
-    --circle-color: #008000;
-    --time-color: #636363;
-}
-
-[data-theme="dark"] {
     --bg-color: #202124;
     --font-color: #ffffff;
     --link-color: #8ab4f8;
@@ -216,7 +204,7 @@ figcaption {
 .footer {
     font-size: 12px;
     text-align: center;
-    margin-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .footer a {

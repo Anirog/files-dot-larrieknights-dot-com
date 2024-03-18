@@ -1,18 +1,4 @@
 :root {
-  --bg-color: #FFFFFF;
-  --font-color: #333333;
-  --link-color: #3897d3;
-  --link-hover-color: #6dacd3;
-  --modal-bg-color: #fefefe;
-  --success-color: green;
-  --modal-border-color: #888888;
-  --btn-border-color: #D6D6D6;
-  --btn-hover-color: #000000;
-  --btn-text-color: #000000;
-  --btn-text-hover-color: #FFFFFF;
-}
-
-[data-theme="dark"] {
   --bg-color: #202124;
   --font-color: #FFFFFF;
   --link-color: #8AB4F8;
