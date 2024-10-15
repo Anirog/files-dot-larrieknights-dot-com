@@ -2,9 +2,6 @@
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [Screenshots](#screenshots)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -12,19 +9,7 @@
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-## Overview
-
-### Screenshots
-
-##### Light Mode
-![](screenshot-light.png)
-
-##### Dark Mode
-![](screenshot-dark.png)
-
-### Links
-
-- [Live Site](https://larrieknights.com)
+[Live Site](https://larrieknights.com)
 
 ## My process
 
