@@ -14,7 +14,7 @@
 }
 
 :root {
-  font-family: "Roboto", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   line-height: 1.5;
 }
 
@@ -51,7 +51,7 @@ a {
 }
 
 a:hover {
-  border-bottom: 1px solid;
+  color: var(--link-hover-color);
 }
 
 .contact-page-text {
@@ -176,7 +176,7 @@ input[type="text"],
 input[type="email"],
 select,
 textarea {
-  font: 17px "Roboto", sans-serif;
+  font: 17px "Space Grotesk", sans-serif;
   width: 100%;
   /* Full width */
   padding: 12px;
@@ -197,7 +197,7 @@ textarea {
 
 /* Style the submit button with a specific background color etc */
 input[type="submit"] {
-  font: 16px "Roboto", sans-serif;
+  font: 16px "Space Grotesk", sans-serif;
   background-color: #3897d3;
   color: white;
   padding: 12px 40px;
