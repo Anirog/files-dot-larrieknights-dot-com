@@ -245,9 +245,9 @@ input[type="submit"]:hover {
 
 /* Tablet 768px and up  */
 @media (min-width: 48em) {
-.about-me-container {
-  text-align: left;
-}
+  .about-me-container {
+    text-align: left;
+  }
 }
 
 /* Media Queries End */
