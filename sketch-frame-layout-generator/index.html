@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sketch Frame Layout Generator</title>
+    <meta name="description"
+        content="Quickly calculate layout settings for Sketch frames: columns, gutter, margins, and offset.">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Sketch Frame Layout Generator">
+    <meta property="og:description" content="Calculate layout settings for Sketch frames in seconds.">
+    <meta property="og:image" content="https://files.larrieknights.com/sketch-frame-layout-generator/preview.jpg">
+    <meta property="og:url" content="https://files.larrieknights.com/sketch-frame-layout-generator">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sketch Frame Layout Generator">
+    <meta name="twitter:description" content="Calculate layout settings for Sketch frames in seconds.">
+    <meta name="twitter:image" content="https://files.larrieknights.com/sketch-frame-layout-generator/preview.jpg">
+
+    <style>
+        :root {
+            --accent: #fdb300;
+            --hover: #ffcf5e;
+            --bg: #f5f5f7;
+            --text: #1d1d1f;
+            --panel: #ffffff;
+            --border: #e0e0e0;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --column: #ffe9b3;
+            --gutter: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 0 auto;
+            background: var(--panel);
+            padding: 32px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        input {
+            margin-top: 6px;
+            padding: 10px 12px;
+            font-size: 16px;
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        .output {
+            margin-top: 32px;
+            background: #fdfdfd;
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            font-family: ui-monospace, monospace;
+            white-space: pre-line;
+            color: #333;
+        }
+
+        svg {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: 160px;
+            margin: 40px auto;
+            border-radius: 8px;
+            background: var(--gutter);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 40px;
+            color: #888;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .highlight a {
+            text-decoration: none;
+            color: var(--accent);
+        }
+
+        .highlight a:hover {
+            text-decoration: none;
+            color: var(--hover);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Sketch Frame Layout Generator</h1>
+
+        <label for="frameWidth">Frame Width (px)</label>
+        <input type="number" id="frameWidth" value="390" />
+
+        <label for="columns">Number of Columns</label>
+        <input type="number" id="columns" value="4" />
+
+        <label for="gutterWidth">Gutter Width (px)</label>
+        <input type="number" id="gutterWidth" value="20" />
+
+        <label for="sideMargin">Side Margin (px)</label>
+        <input type="number" id="sideMargin" value="20" />
+
+        <div class="output" id="output">
+            Enter values to see layout settings...
+        </div>
+
+    </div>
+
+    <svg id="gridPreview"></svg>
+
+    <div class="footer">
+        Made by <span class="highlight"><a href="https://larrieknights.com">Larrie</a></span>
+    </div>
+
+    <script>
+        const frameInput = document.getElementById('frameWidth');
+        const columnsInput = document.getElementById('columns');
+        const gutterInput = document.getElementById('gutterWidth');
+        const marginInput = document.getElementById('sideMargin');
+        const output = document.getElementById('output');
+        const gridPreview = document.getElementById('gridPreview');
+
+        // updateLayout function start
+
+        function updateLayout() {
+            const frameWidth = parseInt(frameInput.value);
+            const columns = parseInt(columnsInput.value);
+            const gutterWidth = parseInt(gutterInput.value);
+            const sideMargin = parseInt(marginInput.value);
+
+            if (!frameWidth || !columns || !gutterWidth || columns < 1 || isNaN(sideMargin)) {
+                output.textContent = 'Please enter valid values.';
+                gridPreview.innerHTML = '';
+                return;
+            }
+
+            const totalGutters = (columns - 1) * gutterWidth;
+            const gridWidth = frameWidth - (sideMargin * 2);
+            const columnWidth = Math.floor((gridWidth - totalGutters) / columns);
+            const offset = sideMargin;
+            const height = 160;
+
+            output.textContent = `
+Layout Settings:
+- Total Width: ${gridWidth}px
+- Offset: ${offset}px
+- Number of Columns: ${columns}
+- Gutter Width: ${gutterWidth}px
+- Column Width: ${columnWidth}px
+- Gutter on outside: Unchecked
+  `.trim();
+
+            // Prepare SVG
+            gridPreview.setAttribute('viewBox', `0 0 ${frameWidth} ${height}`);
+            gridPreview.innerHTML = '';
+
+            const NS = "http://www.w3.org/2000/svg";
+            let x = offset;
+            const gutterLabels = [];
+            const columnLabels = [];
+            const columnNameLabels = [];
+            const columnRects = [];
+
+            // LEFT margin label
+            const leftMarginLabel = document.createElementNS(NS, "text");
+            leftMarginLabel.setAttribute("x", offset / 2);
+            leftMarginLabel.setAttribute("y", height / 2);
+            leftMarginLabel.setAttribute("text-anchor", "middle");
+            leftMarginLabel.setAttribute("font-size", "10");
+            leftMarginLabel.setAttribute("fill", "#aaa");
+            leftMarginLabel.textContent = `${offset}px`;
+            gridPreview.appendChild(leftMarginLabel);
+
+            for (let i = 0; i < columns; i++) {
+                // Column rects
+                const col = document.createElementNS(NS, "rect");
+                col.setAttribute("x", x);
+                col.setAttribute("y", 0);
+                col.setAttribute("width", columnWidth);
+                col.setAttribute("height", height - 40);
+                col.setAttribute("fill", "#FEEEEF");
+                columnRects.push(col);
+
+                // Column width label
+                const colWidthLabel = document.createElementNS(NS, "text");
+                colWidthLabel.setAttribute("x", x + columnWidth / 2);
+                colWidthLabel.setAttribute("y", height / 2);
+                colWidthLabel.setAttribute("text-anchor", "middle");
+                colWidthLabel.setAttribute("font-size", "10");
+                colWidthLabel.setAttribute("fill", "#333");
+                colWidthLabel.textContent = `${columnWidth}px`;
+                columnLabels.push(colWidthLabel);
+
+                // Column index label
+                const colLabel = document.createElementNS(NS, "text");
+                colLabel.setAttribute("x", x + columnWidth / 2);
+                colLabel.setAttribute("y", height - 14);
+                colLabel.setAttribute("text-anchor", "middle");
+                colLabel.setAttribute("font-size", "10");
+                colLabel.setAttribute("fill", "#555");
+                colLabel.textContent = `Col ${i + 1}`;
+                columnNameLabels.push(colLabel);
+
+                x += columnWidth;
+
+                if (i < columns - 1) {
+                    // Gutter width label
+                    const gutterLabel = document.createElementNS(NS, "text");
+                    gutterLabel.setAttribute("x", x + gutterWidth / 2);
+                    gutterLabel.setAttribute("y", height / 2);
+                    gutterLabel.setAttribute("text-anchor", "middle");
+                    gutterLabel.setAttribute("font-size", "10");
+                    gutterLabel.setAttribute("fill", "#aaa");
+                    gutterLabel.textContent = `${gutterWidth}px`;
+                    gutterLabels.push(gutterLabel);
+
+                    x += gutterWidth;
+                }
+            }
+
+            // RIGHT margin label
+            const rightMarginLabel = document.createElementNS(NS, "text");
+            rightMarginLabel.setAttribute("x", frameWidth - offset / 2);
+            rightMarginLabel.setAttribute("y", height / 2);
+            rightMarginLabel.setAttribute("text-anchor", "middle");
+            rightMarginLabel.setAttribute("font-size", "10");
+            rightMarginLabel.setAttribute("fill", "#aaa");
+            rightMarginLabel.textContent = `${offset}px`;
+            gridPreview.appendChild(rightMarginLabel);
+
+            // Render in correct order
+            columnRects.forEach(el => gridPreview.appendChild(el));
+            columnLabels.forEach(el => gridPreview.appendChild(el));
+            columnNameLabels.forEach(el => gridPreview.appendChild(el));
+            gutterLabels.forEach(el => gridPreview.appendChild(el));
+        }
+
+        // updateLayout function end
+
+        [frameInput, columnsInput, gutterInput, marginInput].forEach(input =>
+            input.addEventListener('input', updateLayout)
+        );
+
+        updateLayout(); // initial render
+    </script>
+
+</body>
+
+</html>
