@@ -1,5 +1,5 @@
 
-# Git Cheat Sheet – For My Photoblog Project
+# Git Branch Cheat Sheet
 
 ## ✅ Everyday Commands
 
@@ -81,19 +81,3 @@ git push origin --delete feature/add-mobile-nav
 ```
 
 ---
-
-## 🛠 Deploying to GitHub Pages
-
-1. Build the site:
-   ```bash
-   python upload.py
-   ```
-
-2. Commit and push:
-   ```bash
-   git add .
-   git commit -m "Rebuild site"
-   git push
-   ```
-
-This updates your `/docs` folder and deploys to GitHub Pages.
