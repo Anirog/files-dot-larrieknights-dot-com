@@ -84,8 +84,17 @@
             border-radius: 12px;
             padding: 20px;
             font-family: ui-monospace, monospace;
-            white-space: pre-line;
+            font-size: 14px;
             color: #333;
+
+            white-space: pre-wrap;
+            /* ✅ preserves line breaks but allows wrap */
+            user-select: text;
+            /* ✅ ensures selection on most browsers */
+            -webkit-user-select: text;
+            /* ✅ required for iOS Safari */
+            -moz-user-select: text;
+            /* ✅ Firefox fallback */
         }
 
         svg {
@@ -310,6 +319,14 @@ Layout Settings:
         );
 
         updateLayout(); // initial render
+
+        // Fix for iPad: blur form fields when tapping the output
+        document.getElementById('output').addEventListener('touchstart', () => {
+            const active = document.activeElement;
+            if (active && typeof active.blur === 'function') {
+                active.blur();
+            }
+        });
 
 
     </script>
