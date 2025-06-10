@@ -44,11 +44,11 @@
 
 ---
 
-## 🔀 Merge a Feature Branch into `main`
+## 🔀 Merge a Feature Branch into `master`
 
-1. Switch to `main`:
+1. Switch to `master`:
    ```bash
-   git checkout main
+   git checkout master
    ```
 
 2. Pull the latest updates:
@@ -61,7 +61,7 @@
    git merge feature/add-mobile-nav
    ```
 
-4. Push `main` to GitHub:
+4. Push `master` to GitHub:
    ```bash
    git push
    ```
