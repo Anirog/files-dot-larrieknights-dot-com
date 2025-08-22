@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const yearsValue = document.querySelector('.years-container .range-label-row span:last-child');
   const monthsSlider = document.querySelectorAll('.range-group input[type="range"]')[1];
   const monthsValue = document.querySelectorAll('.range-group .range-label-row span:last-child')[1];
-  const interestSlider = document.querySelector('.interest-rate-container input[type="range"]');
-  const interestValue = document.querySelector('.interest-rate-container .range-label-row span:last-child');
+  const interestSlider = document.getElementById('interest-slider');
+  const interestInput = document.getElementById('interest-input');
   const calculateBtn = document.querySelector('.calculate-button');
   const resultAmount = document.querySelector('.result-amount');
   const resultText = document.querySelector('.results p');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
   monthsSlider.value = 0;
   monthsValue.textContent = '0';
   interestSlider.value = 0;
-  interestValue.textContent = '0%';
+  interestInput.value = 0;
   resultAmount.textContent = '£0.00';
   resultText.innerHTML = "You'd have <strong>£0.00</strong> in total after saving <strong>£0.00</strong> a month for <strong>0 years</strong>";
 
@@ -30,8 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
   yearsSlider.max = 50;
   monthsSlider.min = 0;
   monthsSlider.max = 11;
+  
+  // Fix the interest slider range - use 0-500 for 0-50.0%
   interestSlider.min = 0;
-  interestSlider.max = 50;
+  interestSlider.max = 500;  // This allows values up to 50.0%
+  interestSlider.step = 1;
+  interestInput.min = 0;
+  interestInput.max = 50;
+  interestInput.step = 0.1;
 
   // Update display on slider/input change
   amountInput.addEventListener('input', function () {
@@ -46,8 +52,24 @@ document.addEventListener('DOMContentLoaded', function () {
     monthsValue.textContent = monthsSlider.value;
   });
 
-  interestSlider.addEventListener('input', function () {
-    interestValue.textContent = interestSlider.value + '%';
+  // Synchronize interest slider and number input
+  interestSlider.addEventListener('input', function() {
+    const value = parseFloat(interestSlider.value) / 10;
+    interestInput.value = value.toFixed(1);
+  });
+
+  interestInput.addEventListener('input', function() {
+    // Limit to 1 decimal place
+    if (interestInput.value.includes('.')) {
+      const parts = interestInput.value.split('.');
+      if (parts[1].length > 1) {
+        interestInput.value = parseFloat(interestInput.value).toFixed(1);
+      }
+    }
+    
+    // Update slider (multiply by 10 since slider works in tenths)
+    const value = parseFloat(interestInput.value) || 0;
+    interestSlider.value = Math.round(value * 10);
   });
 
   // Format currency
@@ -60,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const monthly = parseFloat(amountInput.value) || 0;
     const years = parseInt(yearsSlider.value) || 0;
     const months = parseInt(monthsSlider.value) || 0;
-    const interest = parseFloat(interestSlider.value) || 0;
+    const interest = parseFloat(interestInput.value) || 0;
     const totalMonths = years * 12 + months;
     let total = 0;
 
