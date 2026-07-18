@@ -1,3 +1,31 @@
+/* Fieldset / legend resets */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-inline-size: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+/* Tax fieldset legend — styled to match form labels */
+.tax-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  margin-top: 1.5em;
+  color: #d18c00;
+  font-weight: 500;
+  width: 100%;
+}
+
+.tax-legend .tooltip-container {
+  display: inline-flex;
+  align-items: center;
+}
+
 label > .tooltip-container {
   margin-left: 0.5em;
 }
@@ -169,6 +197,14 @@ input[type="radio"] {
   margin-right: 8px;
   cursor: pointer;
   background: #fff;
+}
+
+/* Override for inline range labels (Years / Months) */
+.range-label-row label {
+  margin-top: 0;
+  color: #333;
+  font-weight: 400;
+  gap: 0;
 }
 
 /* Style for checked state (the inner filled circle) */

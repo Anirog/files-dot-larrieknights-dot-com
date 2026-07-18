@@ -1,16 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="title" content="Savings Calculator - Turn Small Steps Into Big Savings">
+  <title>UK Savings Calculator – Estimate Your Savings with Compound Interest</title>
   <meta name="description"
-    content="A simple, free tool to help you estimate how much you could save over time. Adjust the amount, interest rate, and duration to see your savings grow.">
-  <title>Savings Calculator - Turn Small Steps Into Big Savings</title>
+    content="Free UK savings calculator. Enter your monthly contribution, interest rate and savings period to estimate how much you could save, with compound interest and your UK income tax band applied." />
 
   <link rel="canonical" href="https://files.larrieknights.com/savings-calculator/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="UK Savings Calculator – Estimate Your Savings" />
+  <meta property="og:description"
+    content="Enter your monthly contribution, interest rate and duration to see how much you could save over time, including compound interest and your UK tax band." />
+  <meta property="og:image" content="https://files.larrieknights.com/savings-calculator/images/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://files.larrieknights.com/savings-calculator/" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="files.larrieknights.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UK Savings Calculator – Estimate Your Savings" />
+  <meta name="twitter:description"
+    content="Enter your monthly contribution, interest rate and duration to see how much you could save over time, including compound interest and your UK tax band." />
+  <meta name="twitter:image" content="https://files.larrieknights.com/savings-calculator/images/og-image.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="https://files.larrieknights.com/savings-calculator/images/favicon-96x96.png"
+    sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="https://files.larrieknights.com/savings-calculator/images/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="https://files.larrieknights.com/savings-calculator/images/apple-touch-icon.png" />
+  <link rel="manifest" href="https://files.larrieknights.com/savings-calculator/images/site.webmanifest" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://files.larrieknights.com/savings-calculator/#app",
+        "name": "UK Savings Calculator",
+        "description": "Estimate how much you could save over time by entering your monthly contribution, interest rate and savings period. Applies UK Personal Savings Allowance and income tax rates.",
+        "url": "https://files.larrieknights.com/savings-calculator/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "en-GB",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "GBP"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://files.larrieknights.com/savings-calculator/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is compound interest calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each month, interest is calculated on the running balance — your contributions plus interest already earned. The monthly rate is your annual interest rate divided by 12, and the formula is the standard future value of an annuity: FV = P × ((1 + r)^n – 1) / r, where P is the monthly contribution, r is the monthly rate and n is the number of months."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the calculator include tax on savings interest?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Select your UK income tax band and the calculator applies the corresponding Personal Savings Allowance (£1,000 for basic rate, £500 for higher rate, nil for additional rate) before deducting tax from the interest earned."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the calculator account for inflation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The figure shown is a nominal value in today's pounds. Inflation is not factored in, so the real purchasing power of the final amount may be lower."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use a 0% interest rate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. At 0%, the result is simply your monthly contribution multiplied by the total number of months — no interest accrues and no tax is applied."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the result guaranteed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The result is an estimate based on a fixed interest rate and consistent monthly contributions. Actual returns depend on your specific savings product, any interest rate changes, and whether you maintain your planned contribution."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -27,116 +125,181 @@
   <script defer src="https://files.larrieknights.com/js/posthog.js"></script>
 
   <!-- Google Fonts -->
-
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-  <meta property="og:title" content="Savings Calculator" />
-  <meta property="og:description" content="How much could you really save?" />
-  <meta property="og:image" content="https://files.larrieknights.com/savings-calculator/images/og-image.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://files.larrieknights.com/savings-calculator/" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Savings Calculator" />
-  <meta name="twitter:description" content="How much could you really save?" />
-  <meta name="twitter:image" content="https://files.larrieknights.com/savings-calculator/images/og-image.png" />
-
-  <link rel="icon" type="image/png" href="https://files.larrieknights.com/savings-calculator/images/favicon-96x96.png"
-    sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="https://files.larrieknights.com/savings-calculator/images/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180"
-    href="https://files.larrieknights.com/savings-calculator/images/apple-touch-icon.png" />
-  <link rel="manifest" href="https://files.larrieknights.com/savings-calculator/images/site.webmanifest" />
 
 </head>
 
 <body>
-  <main class="container">
-    <section class="calculator">
-      <h1>Savings Calculator</h1>
-      <p class="subtitle">How much could I have if I save regularly?</p>
+  <a class="skip-link" href="#calculator">Skip to calculator</a>
 
-      <label class="input-label">How much will you save each month?</label>
-      <div class="input-group"><span>£</span>
+  <main>
+    <div class="container" id="calculator">
+      <section class="calculator" aria-labelledby="calc-heading">
+        <h1 id="calc-heading">Savings Calculator</h1>
+        <p class="subtitle">How much could I have if I save regularly?</p>
 
-        <!-- How much will you save each month? -->
-        <input type="number" inputmode="numeric" pattern="[0-9]*" value="200">
+        <label class="input-label" for="monthly-amount">How much will you save each month?</label>
+        <div class="input-group">
+          <span aria-hidden="true">£</span>
+          <input type="number" id="monthly-amount" inputmode="numeric" pattern="[0-9]*" value="200"
+            aria-label="Monthly savings amount in pounds">
+        </div>
 
+        <p class="range-label">How long will you save for?</p>
 
-      </div>
+        <div class="range-group">
+          <div class="years-container">
+            <div class="range-label-row">
+              <label for="years-range">Years</label>
+              <span aria-live="polite">20</span>
+            </div>
+            <input type="range" id="years-range" value="20" aria-label="Duration in years" />
+          </div>
 
-      <label class="range-label">How long will you save for?</label>
-
-      <div class="range-group">
-        <div class="years-container">
           <div class="range-label-row">
-            <span>Years</span>
-            <span>20</span>
+            <label for="months-range">Months</label>
+            <span aria-live="polite">0</span>
           </div>
-          <input type="range" value="20" />
+          <input type="range" id="months-range" value="0" aria-label="Additional months" />
         </div>
 
-        <div class="range-label-row">
-          <span>Months</span>
-          <span>0</span>
-        </div>
-        <input type="range" value="0" />
-      </div>
-
-      <div class="interest-rate-container">
-        <div class="range-label-row">
-          <span class="interest-rate-text">What's the interest rate?</span>
-          <div class="interest-input-wrapper">
-            <input type="number" id="interest-input" value="0" step="0.1" min="0" max="50" inputmode="decimal"
-              class="interest-number-input">
-            <span>%</span>
+        <div class="interest-rate-container">
+          <div class="range-label-row">
+            <span class="interest-rate-text">What's the interest rate?</span>
+            <div class="interest-input-wrapper">
+              <input type="number" id="interest-input" value="0" step="0.1" min="0" max="50" inputmode="decimal"
+                class="interest-number-input" aria-label="Annual interest rate percentage">
+              <span aria-hidden="true">%</span>
+            </div>
           </div>
+          <input type="range" id="interest-slider" value="0" min="0" max="500" step="1"
+            aria-label="Annual interest rate slider" />
         </div>
-        <input type="range" id="interest-slider" value="0" min="0" max="500" step="1" />
-      </div>
 
-      <label>How much tax do you pay on interest?
-        <span class="tooltip-container">
-          <i class="ph ph-info"></i>
-          <div class="tooltip-popover" role="tooltip">
-            Based on your annual income, your tax band for savings interest is:
-            <ul>
-              <li><strong>None:</strong> Your income is below the Personal Allowance, or your interest is within the
-                tax-free Personal Savings Allowance.</li>
-              <li><strong>Basic Rate (20%):</strong> Your income is between £12,571 and £50,270. You get a £1,000
-                tax-free Personal Savings Allowance.</li>
-              <li><strong>Higher Rate (40%):</strong> Your income is between £50,271 and £125,140. You get a £500
-                tax-free Personal Savings Allowance.</li>
-              <li><strong>Additional Rate (45%):</strong> Your income is over £125,140. There is no tax-free allowance.
-              </li>
-            </ul>
+        <fieldset class="tax-fieldset">
+          <legend class="tax-legend">How much tax do you pay on interest?
+            <span class="tooltip-container">
+              <i class="ph ph-info" role="button" aria-label="More information about UK savings tax bands"
+                tabindex="0"></i>
+              <div class="tooltip-popover" role="tooltip" aria-hidden="true">
+                Based on your annual income, your tax band for savings interest is:
+                <ul>
+                  <li><strong>None:</strong> Your income is below the Personal Allowance, or your interest is within
+                    the tax-free Personal Savings Allowance.</li>
+                  <li><strong>Basic Rate (20%):</strong> Your income is between £12,571 and £50,270. You get a £1,000
+                    tax-free Personal Savings Allowance.</li>
+                  <li><strong>Higher Rate (40%):</strong> Your income is between £50,271 and £125,140. You get a £500
+                    tax-free Personal Savings Allowance.</li>
+                  <li><strong>Additional Rate (45%):</strong> Your income is over £125,140. There is no tax-free
+                    allowance.</li>
+                </ul>
+              </div>
+            </span>
+          </legend>
+
+          <div class="radio-group">
+            <label><input type="radio" name="tax" checked> None</label>
+            <label><input type="radio" name="tax"> Basic rate</label>
+            <label><input type="radio" name="tax"> Higher rate</label>
+            <label><input type="radio" name="tax"> Additional rate</label>
           </div>
-        </span>
-      </label>
+        </fieldset>
 
-      <div class="radio-group">
-        <label><input type="radio" name="tax" checked> None</label>
-        <label><input type="radio" name="tax"> Basic rate</label>
-        <label><input type="radio" name="tax"> Higher rate</label>
-        <label><input type="radio" name="tax"> Additional rate</label>
-      </div>
+        <button class="calculate-button" type="button">Calculate</button>
+      </section>
 
-      <button class="calculate-button">Calculate</button>
-    </section>
+      <section class="results" aria-label="Calculation result" aria-live="polite">
+        <img src="images/piggybank.png" alt="Piggy bank savings illustration" />
+        <div class="result-amount">£0.00</div>
+        <p>You'd have <strong>£0.00</strong> in total after saving <strong>£0.00</strong> a month for <strong>0
+            years</strong></p>
+      </section>
+    </div>
 
-    <section class="results">
-      <img src="images/piggybank.png" alt="Piggy bank savings calculator illustration" />
-      <div class="result-amount">£100,000</div>
-      <p>You'd have <strong>£100,000</strong> in total after saving <strong>£200</strong> a month for <strong>20
-          years</strong></p>
-    </section>
+    <div class="info-sections">
+
+      <section class="info-card" aria-labelledby="how-to-use-heading">
+        <h2 id="how-to-use-heading">How to use the savings calculator</h2>
+        <ol>
+          <li>Enter the amount you plan to save each month in the first field.</li>
+          <li>Use the sliders to choose how long you intend to save — in years and additional months.</li>
+          <li>Enter your expected annual interest rate, or drag the slider.</li>
+          <li>Select your UK income tax band to apply the relevant savings interest deduction.</li>
+          <li>Press <strong>Calculate</strong> to see your estimated total.</li>
+        </ol>
+      </section>
+
+      <section class="info-card" aria-labelledby="how-it-works-heading">
+        <h2 id="how-it-works-heading">How the calculation works</h2>
+        <p>The calculator uses the standard future value of an annuity formula for regular monthly contributions:</p>
+        <p class="formula"><strong>FV = P &times; ((1 + r)<sup>n</sup> &minus; 1) &divide; r</strong></p>
+        <p>Where <strong>P</strong> is your monthly contribution, <strong>r</strong> is your annual interest rate
+          divided by 12 (the monthly rate), and <strong>n</strong> is the total number of months. Interest compounds
+          monthly — each month you earn interest on the full balance, including all previous interest.</p>
+        <p>At 0% interest, the result is simply your monthly contribution multiplied by the number of months.</p>
+        <p>If you select a tax band, the deduction is applied to the total interest earned after allowing for the
+          relevant UK Personal Savings Allowance (£1,000 for basic rate taxpayers; £500 for higher rate; none for
+          additional rate). The income thresholds and allowances shown reflect the 2024–25 UK tax year.</p>
+      </section>
+
+      <section class="info-card" aria-labelledby="assumptions-heading">
+        <h2 id="assumptions-heading">Things to bear in mind</h2>
+        <ul>
+          <li>The result is an estimate based on fixed inputs. Real savings returns will vary.</li>
+          <li>Interest rates on savings accounts can change at any time. The calculation assumes a constant rate
+            throughout.</li>
+          <li>This calculator compounds interest monthly. Some savings products compound daily, quarterly or annually,
+            which may produce slightly different results.</li>
+          <li>Inflation is not accounted for. The figure shown is in nominal terms — its purchasing power in the future
+            may be lower.</li>
+          <li>Account fees, charges and individual deposit limits are not included.</li>
+          <li>The UK tax thresholds and Personal Savings Allowances used here reflect the 2024–25 tax year. These
+            figures may change in future tax years.</li>
+          <li>This page provides general information only and is not financial advice. If you need personal guidance,
+            consider speaking to a regulated financial adviser.</li>
+        </ul>
+      </section>
+
+      <section class="info-card" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+
+        <details>
+          <summary>How is compound interest calculated?</summary>
+          <p>Each month, interest is calculated on the running balance — your contributions plus interest already
+            earned. The monthly rate is your annual rate divided by 12. This means your money grows a little faster
+            each month as the interest base increases.</p>
+        </details>
+
+        <details>
+          <summary>Does the calculator include tax on savings interest?</summary>
+          <p>Yes. Select your UK income tax band and the calculator will apply the corresponding Personal Savings
+            Allowance before deducting tax from the interest earned: £1,000 allowance for basic rate taxpayers (20%
+            tax above that), £500 for higher rate taxpayers (40% above that), and no allowance for additional rate
+            taxpayers (45% on all interest).</p>
+        </details>
+
+        <details>
+          <summary>Does the calculator account for inflation?</summary>
+          <p>No. The figure shown is a nominal value in today's pounds. Inflation is not factored in, so the real
+            purchasing power of the final amount may be lower than it appears.</p>
+        </details>
+
+        <details>
+          <summary>Can I use a 0% interest rate?</summary>
+          <p>Yes. At 0%, the result is simply your monthly contribution multiplied by the total number of months — no
+            interest accrues and no tax is deducted.</p>
+        </details>
+
+        <details>
+          <summary>Is the result guaranteed?</summary>
+          <p>No. The result is an estimate based on a fixed interest rate and consistent monthly contributions. Actual
+            returns depend on your specific savings product, any interest rate changes, and whether you maintain your
+            planned contribution throughout the period.</p>
+        </details>
+
+      </section>
+
+    </div>
   </main>
 
   <footer class="footer">Made by <a href="https://larrieknights.com" rel="author noopener">Larrie</a></footer>

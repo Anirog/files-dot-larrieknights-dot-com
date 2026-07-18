@@ -46,3 +46,90 @@
 .footer a:hover {
   color: #888888;
 }
+
+/* Info sections */
+.info-card {
+  background: #fff;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5em;
+}
+
+.info-card p,
+.info-card li {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.info-card p + p {
+  margin-top: 0.75em;
+}
+
+.info-card ol,
+.info-card ul {
+  padding-left: 1.5em;
+  margin-top: 0.5em;
+}
+
+.info-card li {
+  margin-bottom: 0.5em;
+}
+
+.info-card li:last-child {
+  margin-bottom: 0;
+}
+
+.formula {
+  background: #fffbe8;
+  border-left: 3px solid #fdbb4b;
+  padding: 0.6em 1em;
+  border-radius: 0 0.4em 0.4em 0;
+  font-family: Verdana, sans-serif;
+  font-size: 0.9em !important;
+}
+
+/* FAQ */
+.info-card details {
+  border-top: 1px solid #eee;
+  padding: 0.9em 0;
+}
+
+.info-card details:last-child {
+  border-bottom: 1px solid #eee;
+}
+
+.info-card summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95em;
+  color: #333;
+  list-style: none;
+  padding-right: 1.5em;
+  position: relative;
+}
+
+.info-card summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #d18c00;
+  font-size: 1.1em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.info-card details[open] summary::after {
+  content: '−';
+}
+
+.info-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.info-card details p {
+  margin-top: 0.6em;
+  padding-left: 0;
+}

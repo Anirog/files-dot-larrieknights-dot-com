@@ -1,3 +1,21 @@
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1em;
+    background: #fdbb4b;
+    color: #333;
+    padding: 0.5em 1em;
+    border-radius: 0 0 0.5em 0.5em;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    z-index: 9999;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -6,6 +24,12 @@
     gap: 2em;
     max-width: 960px;
     margin: auto;
+}
+
+.info-sections {
+    max-width: 960px;
+    margin: 0 auto 2em;
+    padding: 0 2em;
 }
 
 .interest-rate-container {
