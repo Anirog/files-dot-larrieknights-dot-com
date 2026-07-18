@@ -23,6 +23,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  icon.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      e.stopPropagation();
+      if (tooltip.classList.contains('active')) {
+        hideTooltip();
+      } else {
+        showTooltip();
+      }
+    }
+  });
+
   // Optional: also show pointer on hover (redundant, but for safety)
   icon.addEventListener('mouseenter', function () {
     icon.style.cursor = 'pointer';
