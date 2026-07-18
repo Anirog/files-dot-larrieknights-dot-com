@@ -36,6 +36,13 @@
   list-style: disc;
 }
 
+.tooltip-popover .tooltip-note {
+  margin-top: 0.7em;
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+}
+
 .tooltip-popover li {
   margin-bottom: 0.5em;
 }
