@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="197px" height="16px" viewBox="0 0 197 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>waveform</title>
+    <defs>
+        <linearGradient x1="-5.11743425e-15%" y1="50.1108199%" x2="100%" y2="50.0238628%" id="linearGradient-1">
+            <stop stop-color="#000000" offset="0%"></stop>
+            <stop stop-color="#484A49" offset="13.8582613%"></stop>
+            <stop stop-color="#2C302E" offset="21.9665137%"></stop>
+            <stop stop-color="#535554" offset="28.9436561%"></stop>
+            <stop stop-color="#575958" offset="38.3951524%"></stop>
+            <stop stop-color="#5B5D5C" offset="46.5833392%"></stop>
+            <stop stop-color="#2F3332" offset="57.1913208%"></stop>
+            <stop stop-color="#646665" offset="66.9969038%"></stop>
+            <stop stop-color="#676968" offset="77.3597843%"></stop>
+            <stop stop-color="#6D6F6E" offset="87.7787803%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-1.73472348e-16%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#02302A" offset="0%"></stop>
+            <stop stop-color="#00BD82" offset="12.9611829%"></stop>
+            <stop stop-color="#62958F" offset="32.4551088%"></stop>
+            <stop stop-color="#B53877" offset="47.3280023%"></stop>
+            <stop stop-color="#B14D66" offset="56.2239242%"></stop>
+            <stop stop-color="#B37D5A" offset="66.1275973%"></stop>
+            <stop stop-color="#83A35D" offset="77.0052765%"></stop>
+            <stop stop-color="#02A06E" offset="90.9987525%"></stop>
+            <stop stop-color="#002A1C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Desktop---1440" transform="translate(-343, -374)">
+            <g id="device" transform="translate(288, 248)">
+                <g id="Device-SF-Symbols" transform="translate(0, 2)">
+                    <g id="screen" transform="translate(26, 23)">
+                        <g id="wave-forms" transform="translate(30, 101)">
+                            <path d="M0,11.5 L4.75100498,10.4922111 C12.5528282,8.83727888 20.531499,8.16797913 28.5,8.5 L39.2547367,8.94811403 C40.08488,8.98270333 40.91456,9.02763733 41.7435833,9.08290555 L48,9.5 C52.9901719,9.83267813 58.0000145,9.72222061 62.9706744,9.16992507 L64.8212834,8.96430185 C70.5646547,8.32614948 76.3748992,8.67644686 82,10 C87.5019325,11.2945723 93.2807572,10.6758299 98.3838905,8.24576641 L102.106345,6.47316914 C107.9084,3.71028594 114.749917,4.29405938 120,8 C125.403895,11.814514 132.186694,13.1222158 138.621393,11.5901445 L142.483765,10.6705322 C147.098948,9.57167894 151.828204,9.02414621 156.572375,9.03951192 C161.508262,9.05549857 165.81747,9.04232793 169.5,9 C174.845966,8.93855212 182.679299,8.77188545 193,8.5" id="gray-wave" stroke="url(#linearGradient-1)"></path>
+                            <path d="M4,10 L13.1989874,8.77346834 C17.0097871,8.26536172 20.8869414,8.68616052 24.5,10 C28.0616722,11.2951535 31.9566632,11.3477789 35.5520267,10.1493244 L36,10 C39.8741304,8.70862321 44.0805894,8.83223575 47.8722022,10.3488809 L49.5,11 C54.3252433,12.9300973 59.6973782,12.9884832 64.5634304,11.1637136 L65,11 C70.2757154,9.02160671 75.9050575,8.16139208 81.530849,8.47393606 L82,8.5 C87.9133673,8.82852041 93.8191072,7.73140178 99.2199494,5.30102279 L101,4.5 C107.138387,1.73772603 114.306659,2.64532721 119.562895,6.850316 L122.84749,9.47799223 C127.95263,13.5621038 134.737954,14.8786139 141,13 C147.587802,11.0236594 154.526635,10.503805 161.335376,11.4764823 L165,12 C174.245477,13.3207824 183.659394,12.8351514 192.719887,10.5700283 L195,10" id="coloured-wave" stroke="url(#linearGradient-2)"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
